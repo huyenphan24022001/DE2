@@ -1,0 +1,15 @@
+Hãy xây dựng một ứng dụng web bao gồm chức năng hiển thị tin tức của một doanh nghiệp, bao gồm các chức năng sau:
+•	Các chức năng của quản trị hệ thống.
+-	Quản lý danh sách các tin tức.
+-	Trang thêm mới tin tức.
+-	Trang chỉnh sửa tin tức.
+-	Chức năng xóa tin tức.
+•	Trang hiển thị cho người xem:
+-	Trang danh sách các tin tức, được hiển thị theo thứ tự mới nhất và giảm dần về thởi gian.
+-	Trang xem chi tiết tin tức cụ thể.
+Các thông tin của tin tức bao gồm:
+-	Tiêu đề.
+-	Mô tả ngắn.
+-	Nội dung tin tức.
+-	Hình ảnh đại diện tin tức.
+-	Ngày đăng.

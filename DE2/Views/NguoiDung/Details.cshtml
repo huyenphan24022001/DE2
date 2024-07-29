@@ -1,0 +1,35 @@
+﻿@model DE2.Models.TinTuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/NguoiDung.cshtml";
+}
+
+<div class="wrap">
+    <div class="main">
+        <div class="content">
+            <div class="box1">
+                <h3><a href="single.html">@Model.TieuDe</a></h3>
+                <span>By Huyen- @Model.NgayDang<span class="comments">8 Comments</span></span>
+                <img alt="" class="mx-auto d-block" src="@Url.Content("~/Content/images/"+Model.HinhAnh)">
+              
+                <div class="blog-data">
+                    <p>@Model.NoiDung.</p>
+
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!----------------  Comment Area -------------------->
+        
+
+       
+
+      
+            <div class="clear"> </div>
+            <!----------------- End Comment Area ----------------->
+        </div>
+ 
+        <div class="clear"></div>
+    </div>
+</div>
+

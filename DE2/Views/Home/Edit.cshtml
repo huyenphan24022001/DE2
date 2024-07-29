@@ -1,0 +1,98 @@
+﻿@model DE2.Models.TinTuc
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chỉnh sửa</h2>
+
+<div class="w3agile-validation w3ls-validation">
+    <div class="panel panel-widget agile-validation">
+        <div class="validation-grids widget-shadow" data-example-id="basic-forms">
+            <div class="input-info">
+                <h3>Thông tin tin tức :</h3>
+            </div>
+            <div class="form-body form-body-info">
+                <form data-toggle="validator" novalidate="true" action="#" method="post" enctype="multipart/form-data">
+                    <div class="form-group ">
+                        <input type="text" class="form-control" id="TieuDe" value="@Model.TieuDe" name="TieuDe" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" min="1" class="form-control" id="MoTaNgan" value="@Model.MoTaNgan"  name="MoTaNgan" required="">
+
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Nội dung" class="form-control" rows="5" id="NoiDung" name="NoiDung" >@Model.NoiDung</textarea>
+               
+
+                    </div>
+                    <div class="form-group">
+                        <img id="preview-img" style="width:150px;" src="~/Content/images/@Model.HinhAnh" alt="Alternate Text" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input id="hsp_tentaptin" type="file" name="HinhAnh"  />
+                    </div>
+                    <div class="bottom">
+
+                        <div class="form-group">
+                            <button type="submit" onclick="return checkday()" class="btn btn-primary ">Thêm</button>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script>
+    $('#TinhTrang').change(function () {
+        // Get the value of the radio button with the specified ID
+        var selectedValue = $('input[name="TinhTrang"]:checked').val();
+        console.log(selectedValue)
+        if (selectedValue == "true") {
+            $("#ProfileUser").css("display", "block");
+        } else {
+            $("#ProfileUser").css("display", "none");
+        }
+    });
+
+    function checkday() {
+        var CCCD = $("#CCCD").val();
+        var Phone = $("#Phone").val();
+        console.log(CCCD.length)
+        if (CCCD.length != 12) {
+            var text = "CCCD phải có 12 ký tự";
+            window.location.href = "https://localhost:44361/Home/Error?MaError=" + text
+            return false;
+        }
+        if (Phone.length != 10) {
+            var text = "Phone phải có 10 ký tự";
+            window.location.href = "https://localhost:44329/44361/Error?MaError=" + text
+            return false;
+        }
+
+        return true;
+    }
+
+    //hình 1
+    const reader = new FileReader();
+    const fileInput = document.getElementById("hsp_tentaptin");
+    const img = document.getElementById("preview-img");
+    reader.onload = e => {
+        img.src = e.target.result;
+    }
+    fileInput.addEventListener('change', e => {
+        const f = e.target.files[0];
+        reader.readAsDataURL(f);
+    })
+</script>
+

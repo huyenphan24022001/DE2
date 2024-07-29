@@ -1,0 +1,41 @@
+﻿@model DE2.Models.TinTuc
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-3">
+    <h2>Chi tiết</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+        
+                <th>Tiêu đề</th>
+                <th>Mô tả ngắn</th>
+                <th>Nội dung</th>
+                <th>Hình ảnh</th>
+                <th>Ngày đăng</th>
+
+      
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+             
+                <td>@Model.TieuDe</td>
+                <td>@Model.MoTaNgan</td>
+                <td>@Model.NoiDung</td>
+                <td><img width="150px" src="@Url.Content("~/Content/images/"+Model.HinhAnh)" alt="Alternate Text" /></td>
+
+                <td>@Model.NgayDang</td>
+          
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
